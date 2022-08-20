@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'product',
     'cart',
     'order',
-    'user'
+    'user',
+    'core'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,3 +130,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # AUTH USER
 AUTH_USER_MODEL="user.Customer"
+
+# Static
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
